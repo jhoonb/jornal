@@ -5,6 +5,9 @@ from typing import Dict, Tuple, Any, List
 import newspaper
 
 
+__all__ = ["gerar_jornal", "json_request_valido", "gerar_docx"]
+
+
 def _gerar_titulo(titulo: str) -> str:
     """[summary]
 

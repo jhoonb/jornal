@@ -127,6 +127,7 @@ version = "5.2.1"
 reference = "cf4185144c5ae012ada8203d0f33bcc57e4aeb6f"
 type = "git"
 url = "https://github.com/kurtmckee/feedparser.git"
+
 [[package]]
 category = "main"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -545,7 +546,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "93c9bf0ffc335fdea98891979dbeb26452b525ce0f6423f1539c7b0bec10be95"
+content-hash = "af664caa056038c5a2bfe6611cfdffe802629d154386ecf2d0c1e1e53ea621c5"
 python-versions = "^3.6"
 
 [metadata.files]

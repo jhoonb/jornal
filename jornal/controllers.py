@@ -2,6 +2,9 @@ import utils
 import jemail
 
 
+__all__ = ["api_noticias", "api_docx", "api_email"]
+
+
 def api_noticias(data_json):
     keys = ("noticias", "titulo", "cabecalho", "tempo")
     if utils.json_request_valido(keys, data_json):
@@ -57,7 +60,6 @@ def api_email(data_json):
         erro = jemail.enviar_email(
             ffrom, to, subject, senha, file_name
         )
-        print("ALGO ERRADO?", erro)
         if not erro:
             return {
                 "status": 200,

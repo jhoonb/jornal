@@ -6,7 +6,7 @@ from email.mime.application import MIMEApplication
 import os
 
 
-# from os.path import basename
+__all__ = ["enviar_email"]
 
 
 def _body() -> str:
@@ -20,6 +20,7 @@ def _body() -> str:
 
 # [AVISO] - Gmail não permite mais app de terceiro
 # sem liberar manualmente.
+# [TODO] adicionar outros emails
 def _getSMTP(email: str) -> dict:
     microsoft = ("hotmail", "live", "outlook", "msn")
     if any(i in email for i in microsoft):

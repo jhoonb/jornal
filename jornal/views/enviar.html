@@ -1,18 +1,28 @@
 {% extends 'base.html' %} {% block titulo %}Enviar Email - Jornal-App{% endblock
 %} {% block conteudo %}
+
+<nav>
+  <ul>
+    <li><a href="/">Tela Inicial</a></li>
+    <li><a href="/configuracao">Configurações</a></li>
+    <li><a href="/logout">Sair</a></li>
+  </ul>
+</nav>
+
 <nav>
   <ul>
     <li>
       <article>
-        <h3><p>Jornal gerado com sucesso!</p></h3>
+        <h3>
+          <p>Jornal gerado com sucesso!</p>
+        </h3>
         <p>
           clique no botão abaixo para ver o arquivo
           <strong>World (.docx) </strong>
         </p>
         <div id="divArquivo"></div>
-        <br />
+        <br>
       </article>
-
       <strong>
         <br>
         <p>
@@ -20,41 +30,19 @@
           abaixo
         </p>
       </strong>
+
       <article>
         <form id="formEnviar">
           <label> <strong>Seu email: </strong></label> <br />
-          <input
-            type="email"
-            size="30"
-            maxlength="200"
-            id="emailFrom"
-            value=""
-            required
-          />
+          <input type="email" size="30" maxlength="200" id="emailFrom" value="" required />
           <br />
           <label>
-            <strong>Emails de destino (separados por vírgula): </strong></label
-          >
+            <strong>Emails de destino (separados por vírgula): </strong></label>
           <br />
-          <input
-            type="email"
-            size="30"
-            maxlength="200"
-            id="emailTo"
-            multiple
-            required
-            value=""
-          />
+          <input type="email" size="30" maxlength="200" id="emailTo" multiple required value="" />
           <br />
           <label> <strong>Senha do Email: </strong></label> <br />
-          <input
-            type="password"
-            size="30"
-            maxlength="200"
-            id="senha"
-            value=""
-            required
-          />
+          <input type="password" size="30" maxlength="200" id="senha" value="" required />
           <br />
 
           <div id="divEmailMsg"></div>

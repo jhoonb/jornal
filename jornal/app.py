@@ -1,5 +1,3 @@
-import os
-
 import bottle
 
 import controllers
@@ -89,17 +87,3 @@ def api_docx():
 @app.post("/api/email.json")
 def api_email():
     return controllers.api_email(bottle.request.json)
-
-
-# ====================================================================
-if __name__ == "__main__":
-
-    env = os.getenv("BOTTLE_ENV") or "development"
-    host = os.getenv("HOST", "0.0.0.0")
-    port = os.getenv("PORT", 8080)
-    if env == "production":
-        bottle.debug(False)
-        app.run(host=host, port=port, reloader=False)
-    else:
-        bottle.debug(True)
-        app.run(host=host, port=port, reloader=True)

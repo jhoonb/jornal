@@ -1,33 +1,79 @@
 # Jornal-App
 
-## Em desenvolvimento 
+Pequeno app web  (local) para gerar jornal.
 
-- Bottle 
+- Título, cabeçalho, previsão do tempo.
 
-- Tacit CSS
+- Insere notícias via url.
 
-- Vanilla JS
+- Gera um markdown com as notícias (título e texto)
+
+- Converte o markdown para .docx (Via pandoc).
+
+- Envia o arquivo .docx por email.
+
+- Tela para configuração padrão.
 
 
-Pandoc to convert md > docx
+**Front-end:** 
+
+- CSS Framework: [Tacit CSS](https://yegor256.github.io/tacit/)
+
+- *Vanilla JS*
+
+**Back-end:**
+
+- Python [Bottle](http://bottlepy.org/) Framework
+
+- Scraping: [Newspaper3k](https://newspaper.readthedocs.io/en/latest/)
 
 
-prod:
+**Pra converter o markdown para .docx:**
 
+- [Pandoc:](https://pandoc.org/) a universal document converter 
+
+
+
+**variável de ambiente:**
+
+Produção
 ```shell
 export BOTTLE_ENV=production
-poetry run python app.py
 ```
-
-
-dev:
-
-
+Desevolvimento:
 ```shell
 export BOTTLE_ENV=development
-poetry run python app.py
 ```
+
+**Execução:**
+
+com Poetry:
+```shell
+poetry run python run.py
+```
+
+ou
+
+```shell
+python run.py
+```
+
 
 ### version
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
+
+----
+
+### Changelog
+
+- **0.1.1:**
+    - correção nos imports
+    
+    - adicionado menu para views /logout /enviar
+
+    - format do código com `black *.py -l 70` 
+
+- **0.1.0:**
+
+    - Commit inicial
