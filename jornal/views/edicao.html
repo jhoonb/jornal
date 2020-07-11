@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block titulo %}Edição - Jornal-App{% endblock %} {%
+block conteudo %}
+
+<nav>
+  <ul>
+    <li><a href="/logout">Sair</a></li>
+  </ul>
+</nav>
+
+<article>
+  <h2>Editar o Jornal (arquivo <i>markdown</i>)</h2>
+  <p>Observação sobre a edição:</p>
+  <blockquote>
+    <p>
+      <strong> # </strong> (1 hashtag) em uma linha cria o título do documento.
+    </p>
+    <p><strong>## </strong> (2 hashtags) cria um tópico no documento.</p>
+    <p><strong>### </strong> (3 hashtags) cria um título para uma notícia</p>
+    <p>
+      <strong> ---- </strong> (4 traços) cria uma linha para dividir as notícias
+    </p>
+  </blockquote>
+  <form autocomplete="off">
+    <label> <strong>Área de Edição: </strong></label>
+    <textarea id="edicaoTextoMarkdown" rows="30" cols="100"></textarea>
+  </form>
+  <nav>
+    <ul>
+      <li>
+        <div id="msg2"></div>
+        <br />
+        <input
+          type="submit"
+          id="edicaoBtnSalvarAtual"
+          value="Salvar a Edição Atual"
+        />
+      </li>
+    </ul>
+  </nav>
+</article>
+<article>
+  <nav>
+    <ul>
+      <li>
+        <h4>Gere seu arquivo Word (.docx) e envie por Email</h4>
+        <br>
+        <div id="msg"></div>
+        <br>
+        <input
+          type="submit"
+          id="edicaoBtnFinalizar"
+          value="Finalizar e Gerar Word"
+        />
+      </li>
+    </ul>
+  </nav>
+</article>
+{% endblock %} {% block js %}
+<script type="text/javascript" src="/static/js/util.js"></script>
+<script type="text/javascript" src="/static/js/edicao.js"></script>
+{% endblock %}

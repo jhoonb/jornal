@@ -1,0 +1,122 @@
+{% extends 'base.html' %} {% block titulo %}Principal - Jornal-App{% endblock %}
+{% block conteudo %}
+<nav>
+  <ul>
+    <li><a href="/">Tela Inicial</a></li>
+    <li><a href="/configuracao">Configurações</a></li>
+    <li><a href="/logout">Sair</a></li>
+  </ul>
+</nav>
+
+<article>
+  <nav>
+    <ul>
+      <li>
+        <h1><u>Dados do Cabeçalho do Jornal</u></h1>
+      </li>
+    </ul>
+  </nav>
+  <form autocomplete="off" id="formCabecalho">
+    <label> <strong> Título: </strong></label>
+    <input
+      type="text"
+      size="100"
+      maxlength="100"
+      id="titulo"
+      value=""
+      required
+    />
+    <label> <strong> Cabeçalho:</strong> </label>
+    <textarea id="cabecalho" rows="4" cols="100" required></textarea>
+    <label> <strong> Previsão do Tempo:</strong> </label>
+    <!-- link abaixo é do clima tempo de uma cidade, apenas para exemplo -->
+    <div id="tempoURL"></div>
+    <textarea id="tempo" rows="4" cols="100" required></textarea>
+    <nav>
+      <ul>
+        <li>
+          <div id="msgSalvarCabecalho"></div>
+          <br />
+          <input
+            type="submit"
+            id="novoBtnSalvarCabecalho"
+            value="Salvar Cabeçalho"
+          />
+        </li>
+      </ul>
+    </nav>
+  </form>
+</article>
+
+<article>
+  <form id="formNoticias" autocomplete="off">
+    <nav>
+      <ul>
+        <li>
+          <h2><u>Insira o link para as Notícias</u></h2>
+        </li>
+      </ul>
+    </nav>
+
+    <label> Selecione a tag: </label>
+    <div id="campoSelect"></div>
+
+    <input
+      type="url"
+      size="70"
+      maxlength="1000"
+      name="URLNoticia"
+      id="URLNoticia"
+      required
+    />
+
+    <nav>
+      <ul>
+        <li>
+          <div id="msgNoticia"></div>
+          <br />
+          <input id="novoBtnAdd" type="submit" value="Adicionar Notícias" />
+        </li>
+      </ul>
+    </nav>
+  </form>
+</article>
+<article>
+  <nav>
+    <ul>
+      <li>
+        <h2><u>Notícias Inseridas</u></h2>
+      </li>
+    </ul>
+  </nav>
+
+  <div>
+    <table id="tabela"></table>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <input id="novoBtnApagar" type="submit" value="Apagar todos os links" />
+      </li>
+    </ul>
+  </nav>
+</article>
+<article>
+  <nav>
+    <ul>
+      <li>
+        <div id="msgFinalizar"></div>
+        <br />
+        <input
+          type="submit"
+          id="novoBtnFinalizar"
+          value="Clique aqui para ir para a página de edição do Jornal"
+        />
+      </li>
+    </ul>
+  </nav>
+</article>
+{% endblock %} {% block js %}
+<script type="text/javascript" src="/static/js/util.js"></script>
+<script type="text/javascript" src="/static/js/novo.js"></script>
+{% endblock %}

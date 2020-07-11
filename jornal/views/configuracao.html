@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block titulo %}Configuração - Jornal-App{% endblock
+%} {% block conteudo %}
+
+<nav>
+  <ul>
+    <li><a href="/">Tela Inicial</a></li>
+    <li><a href="/logout">Sair</a></li>
+  </ul>
+</nav>
+
+<article>
+  <nav>
+    <ul>
+      <li>
+        <h2>Configurações do Jornal</h2>
+      </li>
+    </ul>
+  </nav>
+
+  <form autocomplete="off" id="confForm">
+    <label> <strong>Título Padrão</strong> </label> <br />
+    <i> Use as tags: {diaNumero}, {diaNome}, {ano}, {mes} </i>
+    <input type="text" size="100" id="titulo" placeholder="título padrão" required/>
+    <br />
+    <label> <strong>Link para a previsão do tempo</strong></label> <br />
+    <input
+      type="url"
+      size="100"
+      id="tempoURL"
+      placeholder="link para a previsão do tempo de sua cidade"
+    />
+    <br />
+    <label> <strong>Texto padrão da previsão do Tempo </strong></label> <br />
+    <textarea id="tempo" rows="3" cols="70" required></textarea> <br />
+    <label> <strong>Cabeçalho Padrão </strong></label> <br />
+    <textarea id="cabecalho" rows="3" cols="70" required></textarea> <br />
+    <label> <strong>Seu email padrão: </strong></label> <br />
+    <input type="email" size="100" maxlength="200" id="emailFrom" value="" required/>
+    <br />
+    <label>
+      <strong>Emails de destino (separados por vírgula): </strong>
+    </label>
+    <br />
+    <input type="email" size="100" maxlength="1000" id="emailTo" required multiple/>
+    <br />
+    <label> <strong>Tags (separados por vírgula): </strong> </label> <br />
+    <input type="text" size="100" maxlength="1000" id="tags" required/>
+  <nav>
+    <ul>
+      <li>
+        <div id="msg"></div>
+        <br />
+        <input type="submit" id="botao" value="Salvar Configuração" />
+      </li>
+    </ul>
+  </nav>
+  </form>
+</article>
+<article>
+  <nav>
+    <ul>
+      <li>
+        <input type="submit" id="confBtnApagar" value="Apagar as configurações" />
+      </li>
+    </ul>
+  </nav>
+</article>
+{% endblock %} {% block js %}
+<script type="text/javascript" src="/static/js/util.js"></script>
+<script type="text/javascript" src="/static/js/configuracao.js"></script>
+{% endblock %}

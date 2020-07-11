@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block titulo %}Acessar - Jornal-App{% endblock %}
+{% block conteudo %}
+
+<article>
+  <nav>
+    <ul>
+      <li>
+        <input id="indexBtnAcessar" type="submit" size="50" value="Acessar">
+      </li>
+      <li>
+        <input id="indexBtnConfiguracao" type="submit" value="Configurações">
+      </li>
+      <li>
+        <input id="indexBtnUltimo" type="submit" value="Ver Último Jornal"">
+        </li>
+        <li>
+          <input id="indexBtnLogout" type="submit" value="Sair"> <br>
+      </li>
+    </ul>
+  </nav>
+</article>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock %}

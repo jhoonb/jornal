@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% block titulo %}Enviar Email - Jornal-App{% endblock
+%} {% block conteudo %}
+<nav>
+  <ul>
+    <li>
+      <article>
+        <h3><p>Jornal gerado com sucesso!</p></h3>
+        <p>
+          clique no botão abaixo para ver o arquivo
+          <strong>World (.docx) </strong>
+        </p>
+        <div id="divArquivo"></div>
+        <br />
+      </article>
+
+      <strong>
+        <br>
+        <p>
+          para enviar o jornal, digite seu email, email de destino e a senha
+          abaixo
+        </p>
+      </strong>
+      <article>
+        <form id="formEnviar">
+          <label> <strong>Seu email: </strong></label> <br />
+          <input
+            type="email"
+            size="30"
+            maxlength="200"
+            id="emailFrom"
+            value=""
+            required
+          />
+          <br />
+          <label>
+            <strong>Emails de destino (separados por vírgula): </strong></label
+          >
+          <br />
+          <input
+            type="email"
+            size="30"
+            maxlength="200"
+            id="emailTo"
+            multiple
+            required
+            value=""
+          />
+          <br />
+          <label> <strong>Senha do Email: </strong></label> <br />
+          <input
+            type="password"
+            size="30"
+            maxlength="200"
+            id="senha"
+            value=""
+            required
+          />
+          <br />
+
+          <div id="divEmailMsg"></div>
+          <br>
+          <input type="submit" id="btnEnviarEmail" value="Enviar por Email" />
+        </form>
+      </article>
+      <br>
+      <input type="submit" id="btnSair" value="Clique aqui para Sair" />
+    </li>
+  </ul>
+</nav>
+
+{% endblock %} {% block js %}
+<script type="text/javascript" src="/static/js/util.js"></script>
+<script type="text/javascript" src="/static/js/enviar.js"></script>
+{% endblock %}
