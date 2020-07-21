@@ -1,6 +1,6 @@
 # Jornal-App
 
-Pequeno app web  (local) para gerar jornal.
+Pequeno app web (local) para criar seus jornais.
 
 - Título, cabeçalho, previsão do tempo.
 
@@ -13,6 +13,11 @@ Pequeno app web  (local) para gerar jornal.
 - Envia o arquivo .docx por email.
 
 - Tela para configuração padrão.
+
+
+### version
+
+__version__ = "0.1.2"
 
 
 **Front-end:** 
@@ -28,10 +33,17 @@ Pequeno app web  (local) para gerar jornal.
 - Scraping: [Newspaper3k](https://newspaper.readthedocs.io/en/latest/)
 
 
+### Dependências
+
 **Pra converter o markdown para .docx:**
 
 - [Pandoc:](https://pandoc.org/) a universal document converter 
 
+
+No diretório do projeto:
+```shell
+poetry install
+```
 
 
 **variável de ambiente:**
@@ -40,12 +52,14 @@ Produção
 ```shell
 export BOTTLE_ENV=production
 ```
-Desevolvimento:
+Desenvolvimento:
 ```shell
 export BOTTLE_ENV=development
 ```
 
 **Execução:**
+
+(dentro do diretório /jornal)
 
 com Poetry:
 ```shell
@@ -59,13 +73,21 @@ python run.py
 ```
 
 
-### version
-
-__version__ = "0.1.1"
-
 ----
 
 ### Changelog
+
+- **0.1.2:**
+    - pequenas correções textuais
+    
+    - up.py (para atualizar de maneira automática o app [em testes])
+
+    - removido *.js* inutilizado.
+
+    - CSS Tacit Framework local em /static/css/
+
+    - na tabela de ação, adicionado botão de up ⬆ e down ⬇, para reorganizar os links e ação de exclusão com símbolo ❌
+
 
 - **0.1.1:**
     - correção nos imports
